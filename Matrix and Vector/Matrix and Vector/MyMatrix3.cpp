@@ -1,9 +1,5 @@
 #include "MyMatrix3.h"
 
-
-/// <summary>
-/// Default constructor
-/// </summary>
 MyMatrix3::MyMatrix3():
 	m11{ 0.0 },
 	m12{ 0.0 },
@@ -17,18 +13,6 @@ MyMatrix3::MyMatrix3():
 {
 }
 
-/// <summary>
-/// constructor taking in 9 doubles.
-/// </summary>
-/// <param name="a11">double</param>
-/// <param name="a12">double</param>
-/// <param name="a13">double</param>
-/// <param name="a21">double</param>
-/// <param name="a22">double</param>
-/// <param name="a23">double</param>
-/// <param name="a31">double</param>
-/// <param name="a32">double</param>
-/// <param name="a33">double</param>
 MyMatrix3::MyMatrix3(double a11, double a12, double a13, double a21, double a22, double a23, double a31, double a32, double a33) :
 	m11{ a11 },
 	m12{ a12 },
@@ -42,12 +26,6 @@ MyMatrix3::MyMatrix3(double a11, double a12, double a13, double a21, double a22,
 {
 }
 
-/// <summary>
-/// constructor taking in 3 vectors
-/// </summary>
-/// <param name="row1">vector</param>
-/// <param name="row2">vector</param>
-/// <param name="row3">vector</param>
 MyMatrix3::MyMatrix3(MyVector3D row1, MyVector3D row2, MyVector3D row3)
 {
 	m11 = row1.X();
@@ -61,17 +39,10 @@ MyMatrix3::MyMatrix3(MyVector3D row1, MyVector3D row2, MyVector3D row3)
 	m33 = row3.Z();
 }
 
-/// <summary>
-/// destructor
-/// </summary>
 MyMatrix3::~MyMatrix3()
 {
 }
 
-/// <summary>
-/// returns a string of the matrix
-/// </summary>
-/// <returns>String</returns>
 std::string MyMatrix3::toString()
 {
 	char tmpbuf[512];
@@ -79,31 +50,16 @@ std::string MyMatrix3::toString()
 	return tmpbuf;
 }
 
-/// <summary>
-/// adds a matrix
-/// </summary>
-/// <param name="other">Matrix</param>
-/// <returns>matrix</returns>
 MyMatrix3 MyMatrix3::operator+(const MyMatrix3 other) const
 {
 	return MyMatrix3(m11 + other.m11, m12 + other.m12, m13 + other.m13, m21 + other.m21, m22 + other.m22, m23 + other.m23, m31 + other.m31, m32 + other.m32, m33 + other.m33 );
 }
 
-/// <summary>
-/// subtracts a matrix
-/// </summary>
-/// <param name="other">Matrix</param>
-/// <returns>matrix</returns>
 MyMatrix3 MyMatrix3::operator-(const MyMatrix3 other) const
 {
 	return MyMatrix3(m11 - other.m11, m12 - other.m12, m13 - other.m13, m21 - other.m21, m22 - other.m22, m23 - other.m23, m31 - other.m31, m32 - other.m32, m33 - other.m33);
 }
 
-/// <summary>
-/// Multiplies matrix by another matrix
-/// </summary>
-/// <param name="other">Matrix</param>
-/// <returns>matrix</returns>
 MyMatrix3 MyMatrix3::operator*(const MyMatrix3 other) const
 {
 	double a11 = m11 * other.m11 + m12*other.m21 + m13 * other.m31;
@@ -118,30 +74,16 @@ MyMatrix3 MyMatrix3::operator*(const MyMatrix3 other) const
 	return MyMatrix3(a11, a12, a13, a21, a22, a23, a31, a32, a33);
 }
 
-/// <summary>
-/// Multiplies matrix by vector
-/// </summary>
-/// <param name="vector">Vector</param>
-/// <returns>Vector</returns>
 MyVector3D MyMatrix3::operator*(const MyVector3D vector) const
 {
 	return MyVector3D(m11*vector.X() + m12 * vector.Y() + m13 * vector.Z(), m21*vector.X() + m22 * vector.Y() + m23 * vector.Z(), m31*vector.X() + m32 * vector.Y() + m33 * vector.Z());
 }
 
-/// <summary>
-/// Multiplies matrix by scaler
-/// </summary>
-/// <param name="scale">Double</param>
-/// <returns>Matrix</returns>
 MyMatrix3 MyMatrix3::operator*(const double scale) const
 {
 	return MyMatrix3(m11 * scale, m12 * scale, m13 * scale, m21 * scale, m22 * scale, m23 * scale, m31 * scale, m32 * scale, m33 * scale);
 }
 
-/// <summary>
-/// Returns the transpose of the Matrix
-/// </summary>
-/// <returns>Matrix transpose</returns>
 MyMatrix3 MyMatrix3::transpose() const
 {
 	double a11 = m11;

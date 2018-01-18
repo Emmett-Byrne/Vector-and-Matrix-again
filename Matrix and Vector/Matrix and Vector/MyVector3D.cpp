@@ -66,13 +66,13 @@ MyVector3D MyVector3D::operator*(const double scalar) const
 
 MyVector3D MyVector3D::operator/(const double divisor) const
 {
-	if (divisor != 0) // never divide by zero 
+	if (divisor != 0)
 	{
 		return MyVector3D(m_x / divisor, m_y / divisor, m_z / divisor);
 	}
 	else
 	{
-		return MyVector3D(); // dividing by zero has no effect according to Pete ??
+		return MyVector3D();
 	}
 }
 
@@ -103,7 +103,7 @@ bool MyVector3D::operator==(const MyVector3D right) const
 
 bool MyVector3D::operator!=(const MyVector3D right) const
 {
-	return !(this->operator==(right)); //equal and not equal are complimentry sets whose union is the domain
+	return !(this->operator==(right));
 }
 
 MyVector3D MyVector3D::operator-()

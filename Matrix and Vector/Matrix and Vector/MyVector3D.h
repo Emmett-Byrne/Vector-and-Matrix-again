@@ -1,10 +1,4 @@
-/// <summary>
-/// @author Peter Lowe
-/// @date Dec 2016
-/// 
-/// time taken 4 hours
-/// no known issues
-/// </summary>
+
 #ifndef MYVECTOR3D
 #define MYVECTOR3D
 

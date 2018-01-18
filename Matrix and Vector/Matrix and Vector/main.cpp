@@ -1,7 +1,3 @@
-/// <summary>
-/// small main program to test matrix class
-/// included are some test to aid in writing correct methods
-/// </summary>
 #ifdef _DEBUG 
 #pragma comment(lib,"sfml-graphics-d.lib") 
 #pragma comment(lib,"sfml-audio-d.lib") 
@@ -25,10 +21,6 @@
 void testConstructors();
 
 const double PI = 3.14159265359;
-
-// you need more comments for Pete's sake
-// pete was here
-// known bugs probably
 
 int main()
 {
